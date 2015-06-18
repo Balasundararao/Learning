@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Float Example</title>
+<!--
+1. Adding the clear property 
+2. making the parent container as float
+3. Overflow:auto
+4. .clear:after {
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+ -->
+<style type="text/css">
+.news {
+  width: 700px;
+  background-color: gray;
+  border: solid 1px black;
+}
+
+.news img {
+  float: left; 
+}
+
+.news p {
+  float: right;
+  width:490px;
+}
+/**
+.clear{
+	clear:both;
+}*/
+
+.clear:after {
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+
+</style>
+</head>
+<body>
+
+<div class="news clear">
+    <img src="../html/apple.png" alt="my pic" />
+    <p>The overflow property defines how an element is supposed to behave if the enclosed content is too big for the stated dimensions. By default the content will spill out of the box, overflowing into the neighboring space. One useful side-effect of applying an overflow property of hidden or auto is that it will automatically clear any floats contained within. So this can be a useful way of clearing an element without adding any extra markup. This method is not appropriate in all situations, since setting the box's overflow property will affect how it behaves. More specifically, this method can force scroll bars or clip content under certain circumstances.
+
+    Using the CSS method, you use the :after pseudo-class in combination with the content declaration to add new content at the end of the specified existing content. In this case, I'm adding a period, as it is a fairly small and unobtrusive character. You don't want the new content to take up any vertical space or be displayed on the page, so you need to set height to 0 and visibility to hidden. Because cleared elements have space added to their top margin, the generated content needs to have its display property set to block. Once this is done, you can then clear your generated content:
+<br/>
+
+
+    </p>
+    <!--<br class="clear"/>-->
+</div>
+
+</body>
+</html>
+
+
+

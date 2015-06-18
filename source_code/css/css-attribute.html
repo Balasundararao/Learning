@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Universal Selectors</title>
+<style type="text/css">
+/** case 1 **/
+acronym[title] {
+  border-bottom: 1px dotted #999;
+}
+acronym[title]:hover, acronym[title]:focus {
+  cursor: help;
+}
+
+/** case 2:  E[attr=val]; **/
+a[rel="nofollow"] {
+  background: url(../html/apple.png) no-repeat left center;
+  padding-left:170px;
+}
+
+/** Case 3 : attr has with in its val ;**/
+.blogroll a[rel~="co-worker"] {
+  border: 1px solid red;
+}
+
+/** Case 4 : attr starts with val;**/
+/*.blogroll a[rel~="friend"] {
+  border: 1px solid pink;
+}*/
+
+/** Case 5 : attr starts with val;**/
+/*.blogroll a[rel$="colleague"] {
+  border: 1px solid yellow;
+}*/
+
+/** Case 6 : attr ends with val;**/
+/*.blogroll a[rel$="colleague"] {
+  border: 1px solid yellow;
+}*/
+
+/** Case 7 : attr anyval with val;**/
+/*.blogroll a[rel*="co-"] {
+  border: 1px solid yellow;
+}*/
+</style>
+</head>
+<body>
+<p>The term <acronym title="self-contained underwater breathing  Attribute selectors">SCUBA</acronym> 
+is an acronym rather than an abbreviation
+Attribute selectors as it is pronounced as a word.</p>
+<br/>
+<br/>
+
+<a rel="nofollow"> Hello Dont Follow me  ever  </a>
+<br/>
+<br/>
+
+<ul class="blogroll">
+  <li><a href="http://adactio.com/" rel="friend met colleague co-worker">More modern browsers get a color version. Jeremy Keith</a></li>
+  <li><a href="http://clagnut.com/" rel="friend met colleague co-worker">More modern browsers get a color version.Richard Rutter</a></li>
+  <li><a href="http://hicksdesign.com/" rel="friend met colleague">More modern browsers get a color version.John Hicks</a></li>
+  <li><a href="http:// stuffandnonsense.co.uk/" rel="friend met colleague">More modern browsers get a color version.Andy Clarke</a></li>
+</ul>
+
+</body>
+</html>

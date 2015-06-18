@@ -1,0 +1,8 @@
+* {  margin:0;  padding:0; }     /* Universal Selectors */
+.one {color: #000000; } /* Class Selector */
+#two{ color: blue;} /* ID selectors */
+table{ border :1px solid #C00; } /* A selector is an HTML tag */
+body > p {color: #yellow; } /*  Child Selecor */ 
+input[type="text"]{
+  color: #000000; 
+} /* Attribute selector */

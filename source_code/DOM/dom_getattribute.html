@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Get Element By Attribute</title>
+</head>
+<body>
+<pre>
+	var paras = document.getElementsByTagName("p"); 
+	for (var i=0; i< paras.length; i++) { 
+		var title_text = paras[i].getAttribute("title");
+		if (title_text != null) { alert(title_text); } 
+	}
+</pre>
+<h1 class="democlass">Hello World</h1>
+<h1 class="democlass2">Hello World</h1>
+
+<p title="item1">Paragraph1</p>
+<p title="item2">Paragraph2</p>
+<p title="item3">Paragraph3</p>
+<p title="item4">Paragraph4</p>
+<p title="item5">Paragraph5</p>
+<p title="">Paragraph6</p>
+
+
+<!--  SCRIPT TAGS -->
+<script type="text/javascript">
+	var paras = document.getElementsByTagName("p"); 
+	for (var i=0; i< paras.length; i++) { 
+		var title_text = paras[i].getAttribute("title"); 
+		console.log( title_text);
+	}
+	</script>
+</body>
+</html>

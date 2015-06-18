@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text Input Control</title>
+</head>
+<body>
+<form >
+
+First name:  <input type="text" name="first_name" /> <!-- type, name, value, size,  maxlength -->
+
+<br />
+Last name:  <input type="text" name="last_name" /> 
+
+<br />
+Description : 
+<textarea rows="5" cols="50" name="description">
+Enter description here...
+</textarea>
+
+<br/>
+<input type="checkbox" name="maths" value="on" checked="checked"> Maths
+<input type="checkbox" name="physics" value="on"> Physics
+
+<br/>
+<input type="radio" name="subject" value="maths"> Maths
+<input type="radio" name="subject" value="physics"> Physics
+
+<br/>
+
+<select name="dropdown">  <!--  name,size, multiple-->
+<option value="Maths" selected>Maths</option> 
+<option value="Physics">Physics</option>
+</select>
+
+<br/>
+<input type="file" name="fileupload" accept="image/*" />
+
+<br/>
+<input type="submit" name="submit" value="Submit" />
+<input type="reset" name="reset"  value="Reset" />
+<input type="button" name="ok" value="OK"  />
+<input type="image" name="imagebutton" src="apple.png" width="100" height="40"/>
+</form>
+<br>
+<br>
+<br>
+<br>
+
+<form action="test.php" method="POST">
+	<input type="text" name="username" id="">
+	<input type="text" name="password" id="">
+	<input type="submit" name="submit"/>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<!-- FORM 2 : FIELD SET -->
+<form action="action_page.php">
+<fieldset>
+<legend>Personal information:</legend>
+First name:<br>
+<input type="text" name="firstname" value="Mickey">
+<br>
+Last name:<br>
+<input type="text" name="lastname" value="Mouse">
+<br><br>
+<input type="submit" value="Submit">
+</fieldset>
+</form>
+
+</body>
+</html>

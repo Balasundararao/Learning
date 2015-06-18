@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<pre>
+alert(document.getElementsByTagName("li").length);    
+for (var i=0; i < document.getElementsByTagName("li").length; i++) { 
+	alert(typeof document.getElementsByTagName("li")[i]); 
+}
+</pre>
+
+
+	<h1>What to buy</h1>
+    <p title="a gentle reminder">Don't forget to buy this stuff.</p>
+    <ul id="purchases">
+      <li>A tin of beans</li>
+      <li class="sale">Cheese</li>
+      <li class="sale important">Milk</li>
+    </ul>
+    <script>
+   		// which means you can make an array with every single element.
+		alert(document.getElementsByTagName("li").length);    
+		for (var i=0; i < document.getElementsByTagName("li").length; i++) { 
+			alert(typeof document.getElementsByTagName("li")[i]); 
+		}
+
+		// Case 2:
+		var shopping = document.getElementById("purchases");
+		var items = shopping.getElementsByTagName("*");
+    </script>
+	
+</body>
+</html>

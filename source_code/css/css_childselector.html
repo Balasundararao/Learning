@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Child Selector</title>
+	<style type="text/css">
+		ul>li>ul>li{color:green;} /**  All the child elements */
+		h1+p{ color:blue;}  /* Immediate Sibling */
+		h1~p{ color:red;}   /* All the Immediate  Siblings */
+	</style>
+</head>
+<body>
+	
+	<p>
+		<span>Hello Test Span</span>
+		Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem 
+		IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+	</p>
+	<h1>Test Child Selector</h1>
+	<p>
+		<span>Hello Test Span</span>
+		Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem 
+		IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+	</p>
+	<ul>
+		<li>Item 
+			<ul>
+				<li>Test1</li>
+				<li>Test2</li>
+				<li>Test3</li>
+				<li>Tes4</li>
+				<li>Ted7</li>
+			</ul>
+		</li>
+		<li>Item2</li>
+		<li>ITem2</li>
+		<li>Item4</li>
+		<li>Item5</li>
+		<li>Item6 </li>
+	</ul>
+
+</body>
+</html>

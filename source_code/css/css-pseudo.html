@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Universal Selectors</title>
+<style type="text/css">
+/* makes all unvisited links blue */
+a:link {color:blue;}
+
+/* makes all visited links green */
+a:visited {color:green;}
+
+/* makes links red when hovered or activated.
+focus is added for keyboard support */
+a:hover, a:focus, a:active {color:red;}
+
+/* makes table rows red when hovered over */
+thead th, tbody td { text-align: center; }
+tbody tr:nth-child(3n) td { background-color: blue; }
+tbody td:first-of-type { text-align: left; }
+tr:hover {background-color: red;}
+tbody tr:nth-of-type(even) { background-color: #DDD; }
+td:empty{background-color:yellow;}
+
+
+/* makes input elements yellow when focus is applied */
+input:focus {background-color:yellow;}
+
+input[type='text']:disabled { border: 1px dotted grey; }
+input[type='text']:enabled { border: 1px solid black; }
+
+/* Target */
+.comment:target { background-color: #DDD; }
+
+blockquote {
+    border-left: 3px double #AAA;
+    color: #222;
+    padding-left: 1em;
+}
+p:first-child { text-decoration: underline; }
+p:last-child { font-style: italic; }
+/**
+p:first-of-type { text-decoration: underline; }
+p:last-of-type { font-style: italic; }
+p:only-of-type { font-style: italic; }
+p:only-child { text-decoration: underline; }
+*/
+</style>
+</head>
+<body>
+
+<a href="#comment-03">Latest comment</a>|
+<a href="html-image.html" target="_self">Opens in Self</a> |
+<a href="/html/index.htm" target="_parent">Opens in Parent</a> |
+<a href="/html/index.htm" target="_top">Opens in Body</a>
+
+<br/>
+<br/>
+
+<!--  FORM -->
+<form >
+First name:  <input type="text" name="first_name" disabled/> 
+<br />
+Last name:  <input type="text" name="last_name" /> 
+</form>
+
+<br/>
+<br/>
+
+<div class="comment" id="comment-03" style="border:1px solid red">
+    <p>CSS3 is going to be great!</p>
+    <p class="author">Joe Blogs, April 15</p>
+</div>
+
+<br/>
+<br/>
+
+<!-- DIV  Block -->
+<div class="span-10 content" >
+    <h2>On Intelligence</h2>
+    <p>Arthur C. Clarke once said:</p>
+    <blockquote>
+      <p>It has yet to be proven that intelligence has any survival&nbsp;value.</p>
+    </blockquote>
+</div>
+
+<!-- TABLE  -->
+<table border="1" width="400"> 
+<tr>
+	<td>Row 1, Column 1</td>
+<td>Row 1, Column 2</td>
+</tr>
+<tr>
+	<td>Row 2, Column 1</td>
+	<td>Row 2, Column 2</td>
+</tr>
+<tr>
+	<td>Row 3, Column 1</td>
+	<td>Row 3, Column 2</td>
+</tr>
+<tr>
+	<td>Row 4, Column 1</td>
+	<td></td>
+</tr>
+</table>
+
+</body>
+</html>

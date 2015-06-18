@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Universal Selectors</title>
+<style>
+.zero { text-shadow: 3px 3px #97B6CB; }
+.one { text-shadow: -3px -3px #97B6CB; }
+.two { text-shadow: -5px 3px #97B6CB; }
+.three { text-shadow: -5px 0 #97B6CB;   color:blue;}
+.four { text-shadow: 3px 3px 3px #888; }
+.five {
+    color: #FFF;
+    text-shadow: 0 0 3px #000;
+}
+.six {
+    text-shadow:
+    0 -2px 3px #FFF,
+    0 -4px 3px #AAA,
+    0 -6px 6px #666,
+    0 -8px 9px #000;
+}
+.seven {
+    color: #FFF;
+    text-shadow:
+    0 2px rgba(0,0,0,0.4),
+    0 4px rgba(0,0,0,0.4),
+    0 6px rgba(0,0,0,0.4),
+    0 8px 0 rgba(0,0,0,0.4);
+}
+/**  Text overflow **/ 
+p.text-box {
+    overflow: hidden;
+    white-space: nowrap;
+}
+p.ellipsis { text-overflow: ellipsis; }
+
+/* Decoration */
+p.text-box {
+    border: 1px solid silver;
+    font-size: 200%;
+    height: 1.5em;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+}
+
+p {
+	background-color: #EEE;
+	font-size: 2em;
+	margin: 0;
+	padding: 0.5em;
+}
+.break {
+	word-wrap: break-word;  // legacy way of calling 
+	overflow-wrap: break-word;  // new way of calling 
+}
+
+.hyphens p {
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+mark { background-color: #DDD; }
+
+</style>
+</head>
+<body class="ch_06">
+
+<div class="container">
+    <div class="span-24">
+        <h1 class="zero">Shadows</h1>
+        <h1 class="one">Quick</h1>
+        <h1 class="two">Brown</h1>
+        <h1 class="three">Fox</h1>
+        <h1 class="four">Black</h1>
+        <h1 class="five">White</h1>
+        <h1 class="six">Black</h1>
+        <h1 class="seven">White</h1>
+    </div>
+</div>
+
+<div class="container">
+	<div class="span-7">&nbsp;</div>
+    <div class="span-10">
+    	<p class="text-box">Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.</p>
+        <p class="text-box ellipsis">Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.</p>
+    </div>
+    <div class="span-7 last">&nbsp;</div>
+</div>
+
+<div class="container">
+    <div class="span-4">&nbsp;</div>
+    <div class="span-8">
+        <p class="break">The condition of silicosis is sometimes factitiously referred to as Pneumonoultramicroscopicsilicovolcanoconiosis.</p>
+    </div>
+    <div class="span-8">
+        <p>The condition of silicosis is sometimes factitiously referred to as Pneumonoultramicroscopicsilicovolcanoconiosis.</p>
+    </div>
+    <div class="span-4 last">&nbsp;</div>
+</div>
+
+<div class="container">
+    <div class="span-12">
+        <p> Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or <mark>conversations</mark> in it, 'and what is the use of a book,' thought Alice 'without pictures or conversation?'</p>
+    </div>
+    <div class="span-12 last hyphens">
+        <p>Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or <mark>conversations</mark> in it, 'and what is the use of a book,' thought Alice 'without pictures or conversation?'</p>
+    </div>
+</div>
+
+
+</body>
+</html>

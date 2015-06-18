@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Float Example</title>
+	<style type="text/css">
+	/*
+		1) making the main container as float.. 
+		2) clearing the Floats using clear:both;
+		3) overflow:hidden to the container;
+		4) .container:after {
+		  content: ".";
+		  height: 0;
+		  visibility: hidden;
+		  display: block;
+		  clear: both;
+		}
+	*/
+	.container{
+		width:500px;
+		border:1px solid green;
+		/*float:left;
+		overflow:hidden;*/
+	}
+	.one{
+		width:248px; height:200px;
+		border:1px solid orange;
+		float:left;
+
+	}
+	.two{
+		width:248px; height:200px;
+		border:1px solid yellow;
+		float:left;
+	}
+	.clr{clear:both;}
+	.container:after {
+	  content: ".";
+	  height: 0;
+	  visibility: hidden;
+	  display: block;
+	  clear: both;
+	}
+	</style>
+
+</head>
+
+<body>
+<div class="container">
+	<div class="one">	
+	</div>
+	<div class="two">
+	</div>
+</div>
+</body>
+</html>

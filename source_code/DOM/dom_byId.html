@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document getElementByID</title>
+</head>
+<body>
+
+  <pre>
+  document.getElementById("purchases");
+  typeof document.getElementById("purchases")
+  </pre>
+
+  <p class="sale">hello</p>
+  <p class="sale">asdf</p>
+  <p class="sale">asdf</p>
+  <p class="sale">asdf</p>
+  <p class="sale">asdf</p>
+
+
+	<h1>What to buy</h1>
+    <p  id="one" title="a gentle reminder">Don't forget to buy this stuff.</p>
+    <ul id="purchases">
+      <li>A tin of beans</li>
+      <li class="saleq">Cheese</li>
+      <li class="saleq important">Milk</li>
+    </ul>
+    <script>
+      alert(typeof document.getElementById("purchases"));
+    </script>
+	
+</body>
+</html>

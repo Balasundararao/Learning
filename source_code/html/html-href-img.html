@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ISMAP Hyperlink Example</title>
+</head>
+<body>
+
+
+<p>Click following link( Example 1 )</p>
+<a href="http://www.google.com" target="_self"> 
+   <img  src="apple.png" alt="Tutorials Point" border="0"/> 
+</a>
+
+
+
+
+<p>Search and click the hotspot ( EXAMPLE 2 )</p>
+<img src=apple.png alt="HTML Map" border="0" usemap="#html" border="1"/>
+<!-- Create  Mappings -->
+<map name="html">
+   <area shape="circle" 
+   coords="80,80,20" href="http://www.css-lang.com" alt="CSS Link" target="_self" border="1"/>
+   <area shape="rect" 
+   coords="120, 240, 300,40" alt="jQuery Link" href="http://www.jquery.com" target="_self"  border="1"/>
+</map>
+
+<pre>
+	Coordinate System
+The actual value of coords is totally dependent on the shape in question. Here is a summary, to be followed by detailed examples:
+
+rect = x1 , y1 , x2 , y2
+x1 and y1 are the coordinates of the upper left corner of the rectangle; x2 and y2 are the coordinates of the lower right corner.
+
+circle = xc , yc , radius
+xc and yc are the coordinates of the center of the circle, and radius is the circle's radius. A circle centered at 200,50 with a radius of 25 would have the attribute coords="200,50,25"
+
+poly = x1 , y1 , x2 , y2 , x3 , y3 , ... xn , yn
+The various x-y pairs define vertices (points) of the polygon, with a "line" being drawn from one point to the next point. A diamond-shaped polygon with its top point at 20,20 and 40 pixels across at its widest points would have the attribute coords="20,20,40,40,20,60,0,40".
+
+All coordinates are relative to the upper-left corner of the image (0,0). Each shape has a related URL.You can use any image software to know the coordinates of different positions.
+
+
+</pre>
+</body>
+</html>

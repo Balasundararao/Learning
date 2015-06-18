@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Child Selectors</title>
+<style type="text/css">
+/*  Child and Descendant Selectors( nav li ) ... */
+#nav > li {
+  border:1px solid red;
+  padding-left: 20px;
+}
+</style>
+</head>
+<body>
+<ul id="nav">
+  <li><a href="/home/">Home</a></li>
+  <li><a href="/services/">Services</a>
+    <ul>
+      <li><a href="/services/design/">Design</a></li>
+      <li><a href="/services/development/">Development</a></li>
+      <li><a href="/services/consultancy/">Consultancy</a></li>
+    </ul>
+  </li>
+  <li><a href="/contact/">Contact Us</a></li>
+</ul>
+</body>
+</html>
