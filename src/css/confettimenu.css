@@ -1,0 +1,35 @@
+	DIV.map {                        /* Reserve some room for the links */
+	  padding-top: 100px;
+	  margin: 2em 0 2em 0;
+	  clear: both;
+	  text-shadow: 0.2em 0.2em /* 0.2em */ silver;
+	}
+	#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9,#p10{
+		white-space: nowrap;
+		text-indent: 0;
+	}
+	#p1 A,#p2 A,#p3 A,#p4 A,#p5 A,#p6 A,#p7 A,#p8 A,#p9 A,#p10 A{   
+   		text-decoration: none;
+	}
+
+	#p1, #p1 A   {color: #DDD; font: 100px/1 Impact, Helvetica Narrow, sans-serif}
+	#p2, #p2 A   {color: #000; font: italic 40px/1 "Georgia", serif}
+	#p3, #p3 A   {color: #080; font: 40px/1 "Verdana", sans-serif}
+	#p4, #p4 A   {color: #37F; font: bold 40px/1 Courier New, Courier, monospace}
+	#p5, #p5 A   {color: #F73; font: bold 60px/1 "Verdana", sans-serif}
+	#p6, #p6 A   {color: #22A; font: bold 25px/1 "Verdana", sans-serif}
+	#p7, #p7 A   {color: #088; font: italic 25px/1 "Verdana", sans-serif}
+	#p8, #p8 A   {color: #088; font: italic 35px/1 "Verdana", sans-serif}
+	#p9, #p9 A   {color: orange; font: italic 30px/1 "Verdana", sans-serif}
+	#p10, #p10 A {color: #F73; font: bold 60px/1 "Verdana", sans-serif}
+
+	#p1  {text-align: left;  margin: -121px 0 101px 0;}   
+	#p2  {text-align: left;  margin: -90px 0 20px 0;}  
+	#p3  {text-align: right; margin: -63px  35% 50px 0;}   
+	#p4  {text-align: right;  margin: -86px 0 55px 0}     
+	#p5  {text-align: left;   margin: -31px 0 30px 0}    
+	#p6  {text-align: left;   margin: -67px 0 15px 49%}  
+	#p7  {text-align: right;  margin: -42px 278px 0px 0}     
+	#p8  {text-align: left;   margin: 38px 0 20px 3%}   
+	#p9  {text-align: left;  margin: -34px 0 5px 600px;}     
+	#p10 {text-align: left;   margin: 0px 0 70px 0}   
