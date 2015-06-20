@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Imports</title>
+</head>
+<body>
+	
+<pre>
+Let's say you have a couple of Sass files, _reset.scss and base.scss. We want to import _reset.scss into base.scss.
+
+
+SCSS Syntax
+
+// _reset.scss
+
+html,
+body,
+ul,
+ol {
+   margin: 0;
+  padding: 0;
+}
+
+
+/* base.scss */
+
+@import 'reset';
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+
+
+
+
+Generated CSS:
+
+html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+</pre>
+
+</body>
+</html>
