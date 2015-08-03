@@ -5,6 +5,9 @@
 <!-- Note that the <li> elements inside <ul> are not indented (whitespaces). 
 If they were, the first child node of <ul> would be a text node 
 -->
+<p id='hello'>Helloggggg</p>
+
+
 <ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
 
 <p>Click the button to remove the first item from the list.</p>
@@ -13,8 +16,12 @@ If they were, the first child node of <ul> would be a text node
 
 <script>
 function myFunction() {
-    var list = document.getElementById("myList");
-    list.removeChild(list.childNodes[0]);
+    //var list = document.getElementById("myList");
+    //list.removeChild(list.childNodes[0]);
+
+    var pp = document.getElementById("hello");
+    pp.removeChild(pp.childNodes[0]);
+
 }
 </script>
 
