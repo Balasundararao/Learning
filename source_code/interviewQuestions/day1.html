@@ -1,0 +1,47 @@
+->) How do you optimize a website’s assets? https://developer.yahoo.com/performance/rules.html
+
+There are a number of answers to this question: File concatenation, file compression, CDN Hosting, offloading assets, re-organizing and refining code, etc. Have a few ready.
+
+
+-> where we should call  javascript assets 
+JavaScript’s tendency to block browser processes, both HTTP requests and UI updates, is the most notable performance issue facing developers. Keeping JavaScript files small and limiting the number of HTTP requests are only the first steps in creating a responsive web application. The richer the functionality an application requires, the more JavaScript code is required, and so keeping source code small isn’t always an option. Limiting yourself to downloading a single large JavaScript file will only result in locking the browser out for a long period of time, despite it being just one HTTP request. To get around this situation, you need to incrementally add more JavaScript to the page in a way that doesn’t block the browser.
+
+-> What are three ways to reduce page load time?
+
+Again there are many answers here: Reduce image sizes, remove unnecessary widgets, HTTP compression, put CSS at the top and script references at the bottom or in external files, reduce lookups, minimize redirects, caching, etc.
+
+
+-> what's the difference between concat and uglify and minify
+
+minification is just removing unnecesary whitespace and redundant / optional tokens like curlys and semicolons, and can be reversed by using a linter
+
+uglification is the act of transforming the code into an "unreadable" form, that is, renaming variables/functions to hide the original intent... it is also un-reversable
+
+-> COOKIES (https://developer.yahoo.com/performance/rules.html)
+Reduce Cookie Size
+tag: cookie
+HTTP cookies are used for a variety of reasons such as authentication and personalization. Information about cookies is exchanged in the HTTP headers between web servers and browsers. It's important to keep the size of cookies as low as possible to minimize the impact on the user's response time.
+For more information check "When the Cookie Crumbles" by Tenni Theurer and Patty Chi. The take-home of this research:
+Eliminate unnecessary cookies
+Keep cookie sizes as low as possible to minimize the impact on the user response time
+Be mindful of setting cookies at the appropriate domain level so other sub-domains are not affected
+Set an Expires date appropriately. An earlier Expires date or none removes the cookie sooner, improving the user response time
+top
+
+-> what are the tools for optimizaion ?
+Yslow( http://yslow.org/)
+PageSpeed Tools
+
+->) what are the tools  for minifications ???
+YUI Compressor
+Google Closure Compiler
+JSMin
+
+
+->8. What is HTML?
+
+HTML stands for HyperText Markup Language. It is the dominant markup language for creating websites and anything that can be viewed in a web browser. If you want to get some extra bonus points, you can learn the history of HTML and throw in some obscure facts.
+
+->)what’s the real difference between HTML and HTML5?
+
+From a broader perspective, HTML was a simple language for laying out text and images on a webpage, whereas HTML5 can be viewed as an application development platform that does what HTML does that and more, including better support for audio, video, and interactive graphics. It has a number of new elements, supports offline data storage for applications, and has more robust exchange protocols. Thus, proprietary plug-in technologies like Adobe Flash, Microsoft Silverlight, Apache Pivot, and Sun JavaFX are no longer needed, because browsers can now process these elements without additional requirements.

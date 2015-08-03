@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<pre>
+	function myFunction() {
+    var btn = document.createElement("BUTTON");
+    document.body.appendChild(btn);
+}
+
+
+var x = document.createElement("p");
+x.setAttribute("id","demo");
+x.appendChild(document.createTextNode("i am fine"));
+x.style.cssText="color:red";
+document.body.appendChild(x);
+</pre>
+
+
+
+<p>Click the button to make a BUTTON element.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    var btn = document.createElement("BUTTON");
+    document.body.appendChild(btn);
+}
+</script>
+
+
+
+
+</body>
+</html>

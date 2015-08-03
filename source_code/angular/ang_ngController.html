@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Controller.. </title>
+	    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+</head>
+<body>
+	<div class="container" ng-controller="SimpleController">
+    <h3>Adding a Simple Controller</h3>
+    <ul>
+        <li data-ng-repeat="name in names">{{name}}</li>
+    </ul>
+</div>
+
+<script>
+
+	var mainApp = angular.module("mainApp", []);
+	mainApp.controller('SimpleController', SimpleController);
+
+    function SimpleController($scope) {
+        $scope.names = ['Dave', 'Napur', 'Heedy', 'Shriva'];
+	}
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
