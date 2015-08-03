@@ -1,0 +1,22 @@
+<!-- Simple Directive to display Text -->
+<!doctype html>
+<html>
+<head>
+<script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+<script>
+    var myapp = angular.module("myApp",[])
+    myapp.directive("helloapp",function(){
+        return{
+            restrict:"E",   // C or M or E  or A
+            template:"<div>Here i am to save the day</div>"
+        };
+    });
+</script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <helloapp></helloapp>
+    </div>
+</body>
+</html>
+

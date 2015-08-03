@@ -1,0 +1,35 @@
+<!--  Example 6:  Iso lative scope... -->
+<!doctype html>
+<html>
+  <head>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+    <script>
+    var myapp = angular.module("myApp",[])
+    myapp.controller("myCtrl",function($scope){
+        $scope.logChore = function(par1, par2){
+            alert(par1 + "Your Sir Name  is" + par2  + "   ---- is done!");
+        }
+    })
+
+    myapp.directive("kid", function(){
+        return{
+            restrict: "E",
+            scope:{
+               done:"&"
+            },
+            template:'<input type="text" ng-model="mname">'+
+                     '<input type="text" ng-model="mage">'+
+                     '{{mname}}' + ' -- ' + '{{mage}}'+
+                    '<div class="button" ng-click="done({name:mname, age:mage})">Its Done</div>'
+        }
+    })
+    </script>
+  </head>
+  <body>
+  <div ng-app="myApp">
+      <div ng-controller="myCtrl">
+          <kid done="logChore(name, age)"></kid>
+      </div>
+  </div>
+</body>
+</html> 

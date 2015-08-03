@@ -1,0 +1,31 @@
+<!--Example 5:  Directives Talking to Controllers. .. Continue-->
+<!doctype html>
+<html>
+<head>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+    <script>
+        var myapp = angular.module("myApp",[])
+        myapp.controller("myAppCtrl", function($scope){
+            $scope.loadMoreTweets = function(){
+                alert("Loading tweets");
+            }
+        })
+        myapp.directive("enter",function(){
+            return function(scope, element, attrs){
+                //element.bind("mouseenter",function(){
+                element.bind("click",function(){
+                   // scope.$apply("loadMoreTweets()");
+                    scope.$apply(attrs.enter);
+                })
+            }
+        })
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+    <div data-ng-controller="myAppCtrl">
+        <div enter="loadMoreTweets()">Roll over to load more tweets</div>
+    </div>
+</div>
+</body>
+</html> 

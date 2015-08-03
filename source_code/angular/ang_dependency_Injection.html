@@ -1,0 +1,22 @@
+<!---  Calling/Including  another module -->
+<!doctype html>
+<html ng-app="helloApp">
+  <head>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+    <script>
+    angular.module('components',[])
+        .directive('helloWorld',function(){
+            return{
+                restrict:'E',
+                template:'<span>Hello World!</span>'
+            }
+            
+        });
+        
+    angular.module('helloApp', ['components']);
+    </script>
+  </head>
+  <body>
+      <hello-World></hello-World>
+  </body>
+</html>

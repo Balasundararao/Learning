@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+    <script>
+        var myapp = angular.module("myApp",[]);
+        myapp.directive("helloapp",function(){
+            return{
+                restrict:"M",             // C or M or E  or A
+                link    : function(){
+                    alert( "I am working" );
+                }
+            };
+        });
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+    <!-- directive:helloapp -->
+</div>
+</body>
+</html> 

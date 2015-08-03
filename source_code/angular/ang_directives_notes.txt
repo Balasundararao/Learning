@@ -1,0 +1,18 @@
+List of Directive Properties for  the Directives and its purpose.. : 
+restrict   : Declare how directive can be used in a template as an element, attribute, class, comment, or any combination. 
+priority   : Set the order of execution in the template relative to other directives on the element.
+template   : Specify an inline template as a string. Not used if you’re specifying your template as a URL.
+templateUrl: Specify the template to be loaded by URL. This is not used if you’ve specified an inline template as a string.
+replace    : If true, replace the current element. If false or unspecified, append this directive to the current element. 
+transclude : Lets you move the original children of a directive to a location inside the new template.
+scope      : Create a new scope for this directive rather than inheriting the parent scope.
+controller : Create a controller which publishes an API for communicating across directives.
+require    : Require that another directive be present for this directive to function correctly.
+link       : Programmatically modify resulting DOM element instances, add event listeners, and set up data binding.
+Compile    :Programmatically modify the DOM template for features across copies of a directive, as when used in ng-repeat. Your compile function can also return link functions to modify the resulting element instances.
+
+Directive Declaration Usage : 
+E--element  -- <my-menu title=Products></my-menu> 
+A--attribute-- <div my-menu=Products></div>  
+C--class    -- <div class=my-menu:Products></div>
+M--comment  -- <!-- directive: my-menu Products -->

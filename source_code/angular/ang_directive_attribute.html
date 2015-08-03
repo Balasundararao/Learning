@@ -1,0 +1,31 @@
+<!-- Behavior Example  -->
+<!doctype html>
+<html>
+<head>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+    <script>
+        var myapp = angular.module("myApp",[]);
+        myapp.directive("enter",function(){
+            return function(scope, element){
+                element.bind("mouseenter",function(){
+                    console.log("I am Inside");
+                    element.addClass(attrs.enter);
+                });
+            };
+        });
+        myapp.directive("leave",function(){
+            return function(scope, element){
+                element.bind("mouseleave",function(){
+                    console.log("I am outside");
+                    element.removeClass(attrs.enter);
+                });
+            };
+        });
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+    <div enter leave>Hello Content</div>
+</div>
+</body>
+</html>

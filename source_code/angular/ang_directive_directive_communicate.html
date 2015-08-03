@@ -1,0 +1,77 @@
+<!--Example 5:  Directive to Directive Communication      -->
+<!doctype html>
+<html>
+<head>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+    <script>
+        var myapp = angular.module("myApp",[])
+
+        myapp.controller("myAppCtrl", function($scope){
+            $scope.loadMoreTweets = function(){
+                alert("Loading tweets");
+            }
+        })
+
+        myapp.directive("enter",function(){
+            return{
+                restrict:"E",
+                scope:{},
+                controller:function($scope){
+                    $scope.abilities = [];
+                    this.addA = function(){
+                        $scope.abilities.push("AAA")
+                    }
+                    this.addB = function(){
+                        $scope.abilities.push("BBB")
+                    }
+                    this.addC = function(){
+                        $scope.abilities.push("CCC")
+                    }
+                },
+                link:function(scope, element){
+                    element.addClass("button");
+                    element.bind("mouseenter",function(){
+                        console.log(scope.abilities);
+                    })
+                }
+            }
+        })
+
+        myapp.directive("a",function(){
+            return{
+                require:"enter",
+                link:function($scope,element,attrs,myAppCtrl){
+                    myAppCtrl.addA();
+                }
+            }
+        })
+        myapp.directive("b",function(){
+            return{
+                require:"enter",
+                link:function($scope,element,attrs,myAppCtrl){
+                    myAppCtrl.addB();
+                }
+            }
+        })
+        myapp.directive("c",function(){
+            return{
+                require:"enter",
+                link:function($scope,element,attrs,myAppCtrl){
+                    myAppCtrl.addC();
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+<div ng-app="myApp">
+    <div data-ng-controller="myAppCtrl">
+        <enter a b c>Scope A,B,C</enter>
+        <enter a>Scope A</enter>
+        <enter b>Scope B</enter>
+        <enter c>Scope C</enter>
+
+    </div>
+</div>
+</body>
+</html>
