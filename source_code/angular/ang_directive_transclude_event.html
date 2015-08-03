@@ -1,0 +1,56 @@
+<!-- 
+We've seen that you can pass in models to a directive using the isolate scope, but sometimes it's desirable to be able to pass in an entire template rather than a string or an object. Let's say that we want to create a "dialog box" component. The dialog box should be able to wrap any arbitrary content.
+
+What does this transclude option do, exactly? transclude makes the contents of a directive with this option have access to the scope outside of the directive rather than inside.
+-->
+<!DOCTYPE html>
+<html lang="en" ng-app="docsTransclusionDirective">
+<head>
+	<meta charset="UTF-8">
+	<title>Transclude</title>
+	    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+
+	    <style type="text/css">
+	    .alert{
+	    	background-color:red;
+	    }
+	</style>
+
+</head>
+<body>
+
+<div ng-controller="Controller">
+  {{message}}
+  <my-dialog ng-hide="dialogIsHidden" on-close="hideDialog(message)">
+    Check out the contents, {{name}}!
+  </my-dialog>
+</div>
+
+<script>
+angular.module('docsIsoFnBindExample', [])
+.controller('Controller', ['$scope', '$timeout', function($scope, $timeout) {
+  $scope.name = 'Tobias';
+  $scope.message = '';
+  $scope.hideDialog = function (message) {
+    $scope.message = message;
+    $scope.dialogIsHidden = true;
+    $timeout(function () {
+      $scope.message = '';
+      $scope.dialogIsHidden = false;
+    }, 2000);
+  };
+}])
+.directive('myDialog', function() {
+  return {
+    restrict: 'E',
+    transclude: true,
+    scope: {
+      'close': '&onClose'
+    },
+    templateUrl: 'my-dialog-close.html'
+  };
+});
+</script>
+
+</body>
+</html>

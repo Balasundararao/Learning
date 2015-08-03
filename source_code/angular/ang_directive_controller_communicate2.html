@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="docsSimpleDirective">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+
+</head>
+<body>
+	
+<div ng-controller="Controller">
+  <div my-customer></div>
+</div>
+
+<script type="text/javascript">
+angular.module('docsSimpleDirective', [])
+.controller('Controller', ['$scope', function($scope) {
+  $scope.customer = {
+    name: 'Naomi',
+    address: '1600 Amphitheatre'
+  };
+}])
+.directive('myCustomer', function() {
+  return {
+    template: 'Name: {{customer.name}} Address: {{customer.address}}'
+    //templateUrl: 'my-customer.html' is  Name: {{customer.name}} Address: {{customer.address}}
+  };
+});
+</script>
+</body>
+</html>
+

@@ -16,6 +16,7 @@
             restrict: "E",
             scope:{
                done:"&"
+               //done:"&ddone"
             },
             template:'<input type="text" ng-model="mname">'+
                      '<input type="text" ng-model="mage">'+
@@ -29,6 +30,8 @@
   <div ng-app="myApp">
       <div ng-controller="myCtrl">
           <kid done="logChore(name, age)"></kid>
+          <!--<kid ddone="logChore(name, age)"></kid>-->
+
       </div>
   </div>
 </body>

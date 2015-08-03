@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="docsIsolateScopeDirective">
+<head>
+	<meta charset="UTF-8">
+	<title>Isolate Equals</title>
+	<script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="scontroller">
+  <my-customer info="naomi"></my-customer>
+  <hr>
+  <my-customer info="igor"></my-customer>
+</div>
+<script type="text/javascript">
+angular.module('docsIsolateScopeDirective', [])
+.controller('scontroller', ['$scope', function($scope) {
+  $scope.naomi = { name: 'Naomi', address: '1600 Amphitheatre' };
+  $scope.igor  = { name: 'Igor', address: '123 Somewhere' };
+}])
+.directive('myCustomer', function() {
+  return {
+    restrict: 'E',
+    scope: {
+      customerInfo: '=info'
+    },
+    templateUrl: 'my-customer.html'
+  };
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dragModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Directives and Events...</title>
+	    <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+
+</head>
+<body>
+	
+	<div>
+		Previously, we used the link function to create a directive that manipulated its DOM elements. Building upon that example, let's make a directive that reacts to events on its elements.
+
+For instance, what if we wanted to create a directive that lets a user drag an element?
+
+	</div>	
+	<span my-draggable>Drag ME</span>
+
+	<div style="width:200px; height:200px;" my-draggable>
+	</div>		
+
+
+	<script>
+
+angular.module('dragModule', [])
+.directive('myDraggable', ['$document', function($document) {
+  return {
+    link: function(scope, element, attr) {
+      var startX = 0, startY = 0, x = 0, y = 0;
+
+      element.css({
+       position: 'relative',
+       border: '1px solid red',
+       backgroundColor: 'lightgrey',
+       cursor: 'pointer'
+      });
+
+      element.on('mousedown', function(event) {
+        // Prevent default dragging of selected content
+        event.preventDefault();
+        startX = event.pageX - x;
+        startY = event.pageY - y;
+        $document.on('mousemove', mousemove);
+        $document.on('mouseup', mouseup);
+      });
+
+      function mousemove(event) {
+        y = event.pageY - startY;
+        x = event.pageX - startX;
+        element.css({
+          top: y + 'px',
+          left:  x + 'px'
+        });
+      }
+
+      function mouseup() {
+        $document.off('mousemove', mousemove);
+        $document.off('mouseup', mouseup);
+      }
+    }
+  };
+}]);
+
+</script>
+
+</body>
+</html>
