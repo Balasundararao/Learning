@@ -1,0 +1,13 @@
+    {"clservice" :{ "resultCode" : 1, "resultMsg" : "Success", "list" :
+    {
+    "a00v1":{
+  "useCases":{"uc1":{
+          "Title":"A00V1 --- Button","Purpose":"To Display  gray button","Outcome":"Should display button in enabled state,on mouse hover on the button the background of the button changes"},"uc2":{
+          "Title":"A00V1 --- Button","Purpose":"To Display blue button","Outcome":"Should display blue button in enabled state,on mouse hover on the button the background of the button changes "},"uc3":{
+          "Title":"A00V1 --- Button","Purpose":"To Display green button","Outcome":"Should display green button in enabled state,on mouse hover on the button the background of the button changes "
+              }
+            }
+          }
+        }
+      }
+    }

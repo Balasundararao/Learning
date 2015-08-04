@@ -18,40 +18,35 @@
 
 	<br/><br/><br/>
 	<div class="container-fluid">
-	<div class="row" ng-controller="ClListController as cl" class="container-fluid">
+	<div class="row" ng-controller="ClListController" class="container-fluid">
 	<div class="col-md-5">
-	    <!--<div class="panel panel-default">
-	        <div class="panel-heading">Component Listing</div>
-	        <div class="panel-body">-->
-	            <div class="table-responsive">
-	                <form role="form" ng:submit="change()" class="horizontal">
-	                    <div class="form-group  has-feedback">
-	                        <label for="inputSuccess3" class="control-label">Service Location:</label>
-	                        <input type="text" ng-model="serviceurl" class="form-control" /> 
-	                    </div>
-	                </form>
-	                <table class="table table-bordered">
-	                    <thead>
-	                        <th>Type</th>
-	                        <th>Component Name</th>
-	                    </thead>
-	                    <tbody>
-	                        <tr ng-repeat="(cmptype,cmpname) in cl.data.clservice.list ">
-	                            <td>{{cmptype}}</td>
-	                            <td><span ng-repeat="(cmpvariationKey,cmpvariationValue) in cmpname">{{cmpvariationKey}} --<span ng-repeat="(key,value) in cmpvariationValue"><!--span(ng-controller='clCmpID')--><a ng-click="cl.showDesc(value)">{{value}}</a>,</span>
-	                                <br/>
-	                                </span>
-	                            </td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </div>
-	    <!--    </div>
-	    </div>-->
+        <div class="table-responsive">
+            <form role="form" ng:submit="change()" class="horizontal">
+                <div class="form-group  has-feedback">
+                    <label for="inputSuccess3" class="control-label">Service Location:</label>
+                    <input type="text" ng-model="serviceurl" class="form-control" /> 
+                </div>
+            </form>
+            <table class="table table-bordered">
+                <thead>
+                    <th>Type</th>
+                    <th>Component Name</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(cmptype,cmpname) in data.clservice.list ">
+                        <td>{{cmptype}}</td>
+                        <td><span ng-repeat="(cmpvariationKey,cmpvariationValue) in cmpname">{{cmpvariationKey}} --<span ng-repeat="(key,value) in cmpvariationValue"><!--span(ng-controller='clCmpID')--><a ng-click="showDesc(value)">{{value}}</a>,&nbsp;&nbsp;</span>
+                            <br/>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 	</div>
 	<div class="col-md-7">
 	    <!--div(ng-include='ng-include', src='"partials/componentlisting_child"')-->
-	    <div ng-show="cl.data1" class="panel panel-default">
+	    <div ng-show="data1" class="panel panel-default">
 	        <div class="panel-heading">Variations for: {{id}}</div>
 	        <div class="panel-body">
 	            <div class="table-responsive">
@@ -62,7 +57,7 @@
 	                        <th>OutCome</th>
 	                        <th>UseCase</th>
 	                    </thead>
-	                    <tbody ng-repeat="(key,value) in cl.data1.clservice.list">
+	                    <tbody ng-repeat="(key,value) in data1.clservice.list">
 	                        <tr ng-repeat="(key1,value1) in value.useCases">
 	                            <td>{{value1.Title}}</td>
 	                            <td>{{value1.Purpose}}</td>
@@ -95,12 +90,12 @@
 
 	// Controller..
 	clApp.controller("ClListController", function($scope,  clListService){
-
-		//var cl     	  = this;
-		$scope.serviceurl = "http://localhost:4502/api/clservice"; 
-		$scope.loadList = loadList;
-		$scope.change   = change;
-
+		$scope.serviceurl = "http://localhost:3010/data/cl_lists.json";
+		//$scope.serviceurl = "http://localhost:4502/api/clservice"; 
+		//$scope.serviceurl = "http://wikibot.cisco.com:3015/docsAndTests/cmpListService.cgi?callback=JSON_CALLBACK";
+		$scope.loadList  = loadList;
+		$scope.change    = change;
+		$scope.showDesc  = showDesc;
 
 		function loadList( url) {
         	$scope.data = undefined;	
@@ -112,8 +107,15 @@
     		console.log("initwww");
             $scope.$watch('serverLocation', loadList);
         };
+        function showDesc( val ){
+            $scope.id = val;
+            //var url1   = cl.serverLocation+"cmpDescListService.cgi?callback=JSON_CALLBACK&id="+val;
+            var url1   = "http://localhost:3010/data/cl_variations.json";
+        	clListService.list(url1, $scope.id).then(function (response) {
+           		$scope.data1 = response.data;
+        	}, $scope.errFn);
+        };   // end showDesc 
     	//$scope.$watch('serviceurl',loadList);
-		
     	// Initializing the function ..
     	$scope.loadList($scope.serviceurl);
 	});
