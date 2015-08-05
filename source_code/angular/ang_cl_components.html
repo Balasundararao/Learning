@@ -27,6 +27,7 @@
                     <input type="text" ng-model="serviceurl" class="form-control" /> 
                 </div>
             </form>
+            {{data}}
             <table class="table table-bordered">
                 <thead>
                     <th>Type</th>
@@ -90,8 +91,8 @@
 
 	// Controller..
 	clApp.controller("ClListController", function($scope,  clListService){
-		$scope.serviceurl = "http://localhost:3010/data/cl_lists.json";
-		//$scope.serviceurl = "http://localhost:4502/api/clservice"; 
+		//$scope.serviceurl = "http://localhost:3010/data/cl_lists.json";
+		$scope.serviceurl = "http://localhost:3010/api/clservices"; 
 		//$scope.serviceurl = "http://wikibot.cisco.com:3015/docsAndTests/cmpListService.cgi?callback=JSON_CALLBACK";
 		$scope.loadList  = loadList;
 		$scope.change    = change;
@@ -100,7 +101,8 @@
 		function loadList( url) {
         	$scope.data = undefined;	
         	clListService.list(url).then(function (response) {
-           		$scope.data = response.data;
+        		console.log(JSON.parse(response.data));
+           		$scope.data = JSON.parse(response.data);
         	}, $scope.errFn);
     	}; // cl.init ends here
     	function change(){
@@ -115,7 +117,7 @@
            		$scope.data1 = response.data;
         	}, $scope.errFn);
         };   // end showDesc 
-    	//$scope.$watch('serviceurl',loadList);
+    	//$scope.$watch('serviceurl',function(){alert('heelo')});
     	// Initializing the function ..
     	$scope.loadList($scope.serviceurl);
 	});
